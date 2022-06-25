@@ -3,6 +3,7 @@ import "animate.css/animate.min.css";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
+import Fade from 'react-reveal/Fade';
 
 
 const Card = ({ color , name}) => {
@@ -22,7 +23,8 @@ const Card = ({ color , name}) => {
         <>
         <CardStyled>
         {
-            <div className="card-wrapper">
+            <Fade right>
+            <div  className="card-wrapper">
                 <div style={{
                     background: `linear-gradient(to left, ${color[0]}, ${color[1]})`,
                 }}
@@ -49,6 +51,7 @@ const Card = ({ color , name}) => {
                 </div>
             </div>
 
+            </Fade>
         }
         </CardStyled>
         </>

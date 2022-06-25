@@ -8,11 +8,15 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "firebase": "^9.8.4",
     "react": "^18.2.0",
+    "react-ace": "^10.1.0",
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
+    "react-hot-toast": "^2.2.0",
     "react-loader-spinner": "^5.1.5",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-svg": "^15.0.4",
     "styled-components": "^5.3.5",
@@ -41,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^3.2.2"
   }
 }

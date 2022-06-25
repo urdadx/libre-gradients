@@ -4,7 +4,7 @@ import { HomeStyled } from "../styles/HomeStyled";
 import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
-import { Button } from "../styles/ButtonStyled";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -23,20 +23,13 @@ const Home = () => {
             <Navbar />
 
             <div className="wrapper">
-                {/* <div className="sort">
-                    <Button>Red</Button>
-                    <Button>Green</Button>
-                    <Button>Yellow</Button>
-                    <Button>Blue</Button>
-                    <Button>Black</Button>
-                    <Button>Randomize</Button>
-
-
-                </div> */}
+        
                 <section className="main">
                     {
                     !loading && gradients.length !== 0 ? gradients.map((gradient) => {
-                        return  <Card color={gradient.colors} name={gradient.name} />
+                        return  <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
+                          <Card color={gradient.colors} name={gradient.name} />
+                        </Link>
                 }) : 
                 <div className="loader"> 
                     <TailSpin width="90" color="blue" />

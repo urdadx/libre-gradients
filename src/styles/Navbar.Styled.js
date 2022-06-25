@@ -28,6 +28,7 @@ export const NavbarStyled = styled.section`
         padding:10px;
         align-items: center;
         gap:6px;
+        cursor: pointer;
     }
 
     .header > .logo-name{
@@ -71,6 +72,7 @@ export const NavbarStyled = styled.section`
     .btn-img{
         width:20px;
         height:20px;
+        border-radius: 100px;
     }
 
     ion-icon{

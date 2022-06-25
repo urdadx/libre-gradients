@@ -7,11 +7,11 @@ export const NavbarStyled = styled.section`
     padding:0px;
     width:100vw;
     position: fixed;
+    z-index: 1000;
 
     .navbar{
         display: flex;
         flex-direction: row;
-        z-index: 0;
         background-color: #fff;
         position: fixed;
         box-shadow: 2px 0 15px rgb(35 38 38 / 13%);
@@ -46,7 +46,7 @@ export const NavbarStyled = styled.section`
         outline:none;
         padding:7px;
         border-radius: 8px;
-        width:450px;
+        width:400px;
         height:50px;
         font-size: 18px;
         font-family: "Raleway",sans-serif;
@@ -66,6 +66,11 @@ export const NavbarStyled = styled.section`
         padding:20px;
         gap:35px;
 
+    }
+
+    .btn-img{
+        width:20px;
+        height:20px;
     }
 
     ion-icon{

@@ -21,8 +21,15 @@ const Navbar = () => {
                 </div>
 
                 <div className="auth">
-                    <Button>Sign In</Button>
-                    <Button>Github</Button>
+                    <Button color="#000" weight="300" background="#fff">
+                        <img className="btn-img" alt="" src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+                        <span>Sign In</span>
+                    </Button>
+
+                    <Button color="#000" width="100px" weight="300" background="#fff">
+                         <img className="btn-img" alt="" src="https://img.icons8.com/glyph-neue/64/000000/github.png"/>
+                        <span>Fork</span>
+                    </Button>
                 </div>
 
             </nav>

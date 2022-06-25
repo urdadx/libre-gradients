@@ -10,6 +10,7 @@ export const CardStyled = styled.div`
         border-radius: 5px;
         box-shadow: 0 10px 40px -10px rgb(0 64 128 / 10%);
         cursor: pointer;
+        margin-bottom:15px;
 
     }
 
@@ -23,9 +24,7 @@ export const CardStyled = styled.div`
         width:280px;
         margin:17px auto;
         height:200px;
-        background: #6CD4FF;  
-        background: -webkit-linear-gradient(to left, #6CD4FF, #8B80F9);
-        background: linear-gradient(to left, #6CD4FF, #8B80F9); 
+   
     }
 
     .colors{
@@ -53,21 +52,23 @@ export const CardStyled = styled.div`
         width:85px;
     }
 
+
     .name{
         text-align: center;
         margin-top:10px;
-        font-weight: 400;
-        font-size:17px;
+        font-weight: 500;
+        font-size:20px;
         font-family: "Inter",sans-serif;
         color:white;
         opacity: 0;
+        padding-top:30%;
     }
 
-    /* .gradient:hover{
+    .gradient:hover{
         .name{
             opacity: 1;
         }
-    } */
+    }
 
 
 

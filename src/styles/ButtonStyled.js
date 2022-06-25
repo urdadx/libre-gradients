@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 
 export const Button = styled.button`
+    border:1px solid rgb(124, 65, 255);
     outline:none;
-    border:none;
     background:${({ background }) => background || 'rgb(124, 65, 255)'}; ;
     width:${({ width }) => width || '140px'};
     text-align: center;
-    font-family: "Inter",sans-serif;
+    font-family: "Firacode";
     font-size: 17px;
-    font-weight: 600;
+    font-weight:${({ weight }) => weight || '600'};
     height:${({ height }) => height || '48px'};
     border-radius: 8px;
     color:${({ color }) => color || '#fff'}; 
@@ -17,6 +17,9 @@ export const Button = styled.button`
     font-size: 1rem;
     line-height: 1.25rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap:5px;
     align-items: center;
 
 `

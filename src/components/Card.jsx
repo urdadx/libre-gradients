@@ -1,23 +1,31 @@
 import { CardStyled } from "../styles/CardStyled";
 import "animate.css/animate.min.css";
-import gradients from "../data/data.json";
-import { useState } from "react";
 
-const Card = () => {
-    const [gradient, setGradients] = useState([])
-    console.log(gradient.name)
+
+const Card = ({ color , name}) => {
+
+
+
     return (
 
         <>
         <CardStyled>
-
+        {
             <div data-aos="fade-left" className="card-wrapper">
-                <div className="gradient"><h5 className="name">Lemon</h5></div>
+                <div style={{
+                    background: `linear-gradient(to left, ${color[0]}, ${color[1]})`,
+                }}
+                        className="gradient">
+                    <h5 className="name">{name}</h5>
+                </div>
                 <div className="actions">
                     <div className="colors">
-                        <div style={{background:"#373F51"}} className="indie-colors"></div>
-                        <div style={{background:"#6CD4FF"}} className="indie-colors"></div>
-                        <div style={{background:"#EE6C4D"}} className="indie-colors"></div>
+                        {
+                            color.map((color)=>{
+                                return <div style={{background:`${color}`}} className="indie-colors"></div>
+                            })
+                        }
+            
                     </div>
                     <div className="icons">
                         <ion-icon name="code-slash-outline"></ion-icon>
@@ -25,6 +33,8 @@ const Card = () => {
                     </div>
                 </div>
             </div>
+
+        }
         </CardStyled>
         </>
       );

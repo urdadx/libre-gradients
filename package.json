@@ -11,6 +11,8 @@
     "react": "^18.2.0",
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "^18.2.0",
+    "react-google-login": "^5.2.2",
+    "react-loader-spinner": "^5.1.5",
     "react-scripts": "5.0.1",
     "react-svg": "^15.0.4",
     "styled-components": "^5.3.5",

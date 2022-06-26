@@ -2,39 +2,47 @@ import { HomeStyled } from "../styles/HomeStyled";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { TailSpin } from "react-loader-spinner";
 import Card from "../components/Card";
+import { TailSpin } from "react-loader-spinner";
 
 const Bookmarks  = () => {
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
+
+    const scrollTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 
     useEffect(() => {
-        setLoading(true)
+        scrollTop()
+        setLoading(false)
     }, [])
 
-    const gradients = JSON.parse(localStorage.getItem("saved-gradients"));
-    console.log(gradients)
+    const gradients = JSON.parse(localStorage.getItem("saved-gradients")) || [];
 
     return ( 
         <>
             <HomeStyled>
             <Navbar />
-            <h2 style={{textAlign:'center'}}>Saved Gradients</h2>
             <div className="wrapper">
-        
                 <section className="main">
                     {
-                    !loading && gradients.length !== 0 ? gradients.map((gradient) => {
+                    !loading ? gradients.map((gradient) => {
                         return  <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
-                          <Card color={gradient.colors} name={gradient.name} />
+                            <Card color={gradient.colors} name={gradient.name} />
                         </Link>
-                }) : 
-                <div className="loader"> 
-                    <TailSpin width="90" color="blue" />
-                </div>
+                    }) : 
+                    <div className="loader">
+                        <TailSpin color="blue" />
+                    </div> 
+
                     }
 
+                    {
+                        !loading && gradients.length == 0 ? 
+                        <div className="loader">
+                            <h1 style={{color:"grey", fontSize:"27px"}}>Ooops.. You have no saved gradients 🤖</h1>
+                        </div> : ""
+                    }
+                  
                 </section>
             </div>
         </HomeStyled>

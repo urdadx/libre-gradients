@@ -17,9 +17,15 @@ export const addBookmark = async (name, color ) => {
 
     try{
         const saved = JSON.parse(localStorage.getItem("saved-gradients") || "[]")
+        for(let element in saved){
+            console.log(element.colors)
+            if(element.name === colorInfo.name){
+                console.log("Already there")
+            }
+        }
         saved.push(colorInfo)
         localStorage.setItem("saved-gradients", JSON.stringify(saved))
-        toast.success("Bookmark added")
+        toast.success("Saved to bookmarks")
     }
     catch(error){
         toast.error(error.message)

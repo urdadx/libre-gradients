@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import Fade from 'react-reveal/Fade';
 import { copyCode } from "../utils/index.utils";
 import { addBookmark } from "../utils/index.utils";
+import Description from "./Description";
 
 const Card = ({ color , name}) => {
 
@@ -30,11 +31,13 @@ const Card = ({ color , name}) => {
             
                     </div>
                     <div className="icons">
-                        <Link  to="#" onClick={() => copyCode(color)}>
+                        <Link  className="bk-parent" to="#" onClick={() => copyCode(color)}>
                             <Icon icon="bi:code-slash" inline={true} width="25" height="25" />
+                            <Description message="Copy CSS" />
                         </Link>
-                        <Link onClick={() => addBookmark(color, name)} to="#">
+                        <Link className="bk-parent" onClick={() => addBookmark(name, color)} to="#">
                             <Icon icon="carbon:bookmark-add" inline={true} width="25" height="25" />
+                            <Description message="Save" />
                         </Link>
                     </div>
                 </div>

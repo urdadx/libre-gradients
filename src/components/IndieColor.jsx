@@ -5,11 +5,13 @@ import AceEditor from "react-ace";
 import { Button } from "../styles/ButtonStyled";
 import { Icon } from '@iconify/react';
 import { useParams } from "react-router-dom";
+
 import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { copyCode } from "../utils/index.utils";
 import { addBookmark } from "../utils/index.utils";
+
 import "ace-builds/src-noconflict/mode-css";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/ext-language_tools";

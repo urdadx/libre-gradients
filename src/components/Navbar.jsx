@@ -3,6 +3,8 @@ import { Button } from "../styles/ButtonStyled";
 import { useAuth } from "../contexts/AuthContext";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
+import Description from "./Description";
 
 const Navbar = () => {
 
@@ -42,12 +44,22 @@ const Navbar = () => {
                     <input type="search" placeholder="Search Gradients..." className="search-bar" />
                 </div>
                 <div className="actions">
-                    <Link to="/bookmarks">
-                        <ion-icon name="bookmarks-outline"></ion-icon>
+                    <Link className="bk-parent" to="/bookmarks">
+                        <Icon icon="bi:bookmark-check" color="gray" width="30" height="30" inline={true} />
+                       <Description message="Bookmarks" />
                     </Link>
-                    <ion-icon name="moon-outline"></ion-icon>
-                    <ion-icon name="cloud-upload-outline"></ion-icon>
-                    <ion-icon name="add-circle-outline"></ion-icon>
+                    <Link to="#" className="bk-parent">
+                        <Icon icon="bi:moon" color="gray" width="30" height="30" inline={true} />
+                        <Description message="Dark mode" />
+                    </Link>
+                    <Link className="bk-parent" to="#">
+                        <Icon icon="akar-icons:cloud-upload" color="gray" width="30" height="30" inline={true} />
+                        <Description message="Generator" />
+                    </Link>
+                    <Link to="#" className="bk-parent">
+                        <Icon icon="carbon:add-alt" color="gray" width="30" height="30" inline={true} />
+                        <Description message="Add colors" />
+                    </Link>
                 </div>
 
                 <div className="auth">

@@ -7,7 +7,6 @@ import NotFound from "./Pages/NotFound";
 
 const App = () => {
       
-
   return (
     <div className="App">
       <Toaster position="bottom-center" reverseOrder={false} />

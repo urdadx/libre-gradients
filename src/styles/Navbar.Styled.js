@@ -93,6 +93,32 @@ export const NavbarStyled = styled.section`
         padding:10px;
     }
 
+
+    .icon-alert{
+        display: none;
+        width: 70px;
+        max-width: fit-content;
+        padding:5px;
+        background-color: black;
+        color:white;
+        position: absolute;
+        font-family: "Inter",sans-serif;
+        margin:10px auto;
+        border-radius: 4px;
+        z-index: 9999;
+    }
+    .icon-alert > small{
+        font-size:14px;
+        text-align: center;
+        
+
+    }
+    .bk-parent:hover{
+       .icon-alert{
+            display: block;
+       }
+    }
+
     @media  only screen and (max-width:768px){
         .navbar{
         

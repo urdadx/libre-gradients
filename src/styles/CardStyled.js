@@ -11,12 +11,19 @@ export const CardStyled = styled.div`
         box-shadow: 0 10px 40px -10px rgb(0 64 128 / 10%);
         cursor: pointer;
         margin-bottom:15px;
+       
 
     }
 
     .actions{
         display: flex;
         gap:20px;
+    }
+
+    .bk-parent:hover{
+       .icon-alert{
+            display: block;
+       }
     }
 
     .gradient{

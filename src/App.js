@@ -2,22 +2,21 @@ import Home from "./Pages/Home";
 import { BrowserRouter as Router, Route ,Routes } from "react-router-dom";
 import ColorDetail from "./Pages/ColorDetail";
 import { Toaster } from "react-hot-toast";
-import Aos from "aos";
-import "aos/dist/aos.css";
-
-// animate.css
-import "animate.css";
+import Bookmarks from "./Pages/Bookmarks";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
-  Aos.init();
+      
 
   return (
     <div className="App">
-        <Toaster  position="bottom-center" reverseOrder={false} />
+      <Toaster position="bottom-center" reverseOrder={false} />
       <Router>
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/indie-color/:name" element={<ColorDetail />}  />
+              <Route path="/bookmarks" element={<Bookmarks  />} />
+              <Route path="*" element={<NotFound title="Page not Found" status="404" icon="🤖" />} />
           </Routes>
       </Router>
     </div>

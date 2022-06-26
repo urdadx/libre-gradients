@@ -1,26 +1,26 @@
-import Card from "../components/Card";
-import Navbar from "../components/Navbar";
 import { HomeStyled } from "../styles/HomeStyled";
-import colorGradients from "../data/data.json";
-import { useState, useEffect } from "react";
-import { TailSpin } from "react-loader-spinner";
+import Navbar from "../components/Navbar";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { TailSpin } from "react-loader-spinner";
+import Card from "../components/Card";
 
-const Home = () => {
+const Bookmarks  = () => {
 
-    const [gradients, setGradients] = useState([]);
-    const [loading, setIsLoading] = useState(false)
-    
+    const [loading, setLoading] = useState(false)
+
     useEffect(() => {
-        setGradients(colorGradients)
-        setIsLoading(false)
-        
+        setLoading(true)
     }, [])
+
+    const gradients = JSON.parse(localStorage.getItem("saved-gradients"));
+    console.log(gradients)
 
     return ( 
         <>
-        <HomeStyled>
+            <HomeStyled>
             <Navbar />
+            <h2 style={{textAlign:'center'}}>Saved Gradients</h2>
             <div className="wrapper">
         
                 <section className="main">
@@ -41,5 +41,5 @@ const Home = () => {
         </>
      );
 }
- 
-export default Home;
+    
+export default Bookmarks;

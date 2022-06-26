@@ -7,31 +7,26 @@ import { Icon } from '@iconify/react';
 import { useParams } from "react-router-dom";
 import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
-import { toast } from "react-hot-toast";
-
+import { TailSpin } from "react-loader-spinner";
+import { copyCode } from "../utils/index.utils";
+import { addBookmark } from "../utils/index.utils";
 import "ace-builds/src-noconflict/mode-css";
 import "ace-builds/src-noconflict/theme-solarized_dark";
-import "ace-builds/src-noconflict/ext-language_tools"
+import "ace-builds/src-noconflict/ext-language_tools";
 
 const IndieColor = () => {
 
     const [gradients, setGradients] = useState([]);
     const [loading, setIsLoading] = useState(false)
+    const { name } = useParams();
+
+    const scrollTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
     
     useEffect(() => {
         setGradients(colorGradients)
         setIsLoading(false)
+        scrollTop()
     }, [])
-
-    const { name } = useParams();
-
-    const copyCode = (color) => {
-
-        const colorCode = `background: ${color[0]};\nbackground: -webkit-linear-gradient(to left, ${color[0]}, ${color[1]} ${color[2] ? color[2] : ""}); \nbackground: linear-gradient(to left, ${color[0]}, ${color[1]} ${color[2] ? color[2] : ""});`;
-        navigator.clipboard.writeText(colorCode);
-        toast.success("Copied to clipboard!"); // toaster
-
-    } 
 
     return ( 
         <>
@@ -73,10 +68,12 @@ const IndieColor = () => {
                                     />
                                     </div>
                                     <div className="actions">
-                                        <Button onClick={() => copyCode(gradient.colors)} width="170px" color="black" background="#DCDEE2">
+                                        <Button onClick={() => copyCode(gradient.colors)}
+                                            width="170px" color="black" background="#DCDEE2">
                                             Copy code <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
                                         </Button>
-                                        <Button width="170px"  color="black" background="#DCDEE2" >
+                                        <Button onClick={() => addBookmark(name, gradient.colors)}
+                                             width="170px"  color="black" background="#DCDEE2" >
                                             Bookmark <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
                                         </Button>
                                         <Button width="170px"  color="black" background="#DCDEE2">
@@ -88,7 +85,9 @@ const IndieColor = () => {
             
                         </div>
                         }
-                    }) : ""
+                    }) : <div className="loader"> 
+                            <TailSpin width="90" color="blue" />
+                        </div>
                 }
   
             </IndieStyled>

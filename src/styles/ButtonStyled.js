@@ -22,4 +22,6 @@ export const Button = styled.button`
     gap:5px;
     align-items: center;
 
+    
+
 `

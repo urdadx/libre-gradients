@@ -1,22 +1,11 @@
 import { CardStyled } from "../styles/CardStyled";
-import "animate.css/animate.min.css";
-import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import Fade from 'react-reveal/Fade';
-
+import { copyCode } from "../utils/index.utils";
+import { addBookmark } from "../utils/index.utils";
 
 const Card = ({ color , name}) => {
-
-    const colorCode = `background: ${color[0]};\nbackground: -webkit-linear-gradient(to left, ${color[0]}, ${color[1]}); \nbackground: linear-gradient(to left, ${color[0]}, ${color[1]});`;
-
-    const copyCode = () => {
-         // clipboard api
-    navigator.clipboard.writeText(colorCode);
-
-    toast.success("Copied to clipboard!"); // toaster
-
-    }   
 
     return (
 
@@ -41,10 +30,10 @@ const Card = ({ color , name}) => {
             
                     </div>
                     <div className="icons">
-                        <Link  to="#" onClick={copyCode}>
+                        <Link  to="#" onClick={() => copyCode(color)}>
                             <Icon icon="bi:code-slash" inline={true} width="25" height="25" />
                         </Link>
-                        <Link to="#">
+                        <Link onClick={() => addBookmark(color, name)} to="#">
                             <Icon icon="carbon:bookmark-add" inline={true} width="25" height="25" />
                         </Link>
                     </div>

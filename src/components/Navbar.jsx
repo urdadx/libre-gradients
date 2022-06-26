@@ -42,7 +42,9 @@ const Navbar = () => {
                     <input type="search" placeholder="Search Gradients..." className="search-bar" />
                 </div>
                 <div className="actions">
-                    <ion-icon name="bookmarks-outline"></ion-icon>
+                    <Link to="/bookmarks">
+                        <ion-icon name="bookmarks-outline"></ion-icon>
+                    </Link>
                     <ion-icon name="moon-outline"></ion-icon>
                     <ion-icon name="cloud-upload-outline"></ion-icon>
                     <ion-icon name="add-circle-outline"></ion-icon>

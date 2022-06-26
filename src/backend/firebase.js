@@ -1,8 +1,7 @@
-// Import the functions you need from the SDKs you need
-// v9 compat packages are API compatible with v8 code
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import "firebase/compat/database"
 
 const firebaseConfig = {
   apiKey:  process.env.REACT_APP_FIREBASE_API_KEY,

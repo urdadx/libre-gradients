@@ -5,8 +5,31 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import Description from "./Description";
+import Generate from "../Pages/Generate";
+import Modal from "react-modal"
+import { useState } from "react";
+import { SOCIAL_MEDIA_MODAL } from "../utils/index.utils";
+import AddColor from "../components/AddColor"
 
 const Navbar = () => {
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [isAddModal, setIsAddModal] = useState(false)
+
+    const openGenerate = () => {   
+        setIsOpen(true);
+    }
+
+    const openAddModal = () => {
+        setIsOpen(true)
+        setIsAddModal(true)
+        
+    }
+    
+      const closeModal = () => {
+        setIsOpen(false);
+        setIsAddModal(false)
+    }
 
     const { authWithGoogle } = useAuth();
     const { currentUser } = useAuth();
@@ -32,6 +55,18 @@ const Navbar = () => {
 
     return ( 
         <>
+        <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={SOCIAL_MEDIA_MODAL}
+                contentLabel="Example Modal"
+                >
+                    {
+                        isAddModal ? <AddColor close={closeModal} /> : 
+                         <Generate close = {closeModal} />
+                    }
+        </Modal>
+
         <NavbarStyled>
             <nav className="navbar">   
                 <div className="header">
@@ -52,11 +87,11 @@ const Navbar = () => {
                         <Icon icon="bi:moon" color="gray" width="30" height="30" inline={true} />
                         <Description message="Dark mode" />
                     </Link>
-                    <Link className="bk-parent" to="#">
+                    <Link onClick={openGenerate} className="bk-parent" to="#">
                         <Icon icon="akar-icons:cloud-upload" color="gray" width="30" height="30" inline={true} />
                         <Description message="Generator" />
                     </Link>
-                    <Link to="#" className="bk-parent">
+                    <Link onClick={openAddModal} to="#" className="bk-parent">
                         <Icon icon="carbon:add-alt" color="gray" width="30" height="30" inline={true} />
                         <Description message="Add colors" />
                     </Link>

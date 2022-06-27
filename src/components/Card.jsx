@@ -6,7 +6,7 @@ import { copyCode } from "../utils/index.utils";
 import { addBookmark } from "../utils/index.utils";
 import Description from "./Description";
 
-const Card = ({ color , name}) => {
+const Card = ({ color , name, isSaved}) => {
 
     return (
 
@@ -35,10 +35,13 @@ const Card = ({ color , name}) => {
                             <Icon icon="bi:code-slash" inline={true} width="25" height="25" />
                             <Description message="Copy CSS" />
                         </Link>
-                        <Link className="bk-parent" onClick={() => addBookmark(name, color)} to="#">
+                        {
+                            isSaved && 
+                        <Link  ink className="bk-parent" onClick={() => addBookmark(name, color)} to="#">
                             <Icon icon="carbon:bookmark-add" inline={true} width="25" height="25" />
                             <Description message="Save" />
                         </Link>
+                        }
                     </div>
                 </div>
             </div>

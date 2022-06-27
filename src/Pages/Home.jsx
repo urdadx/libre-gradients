@@ -17,6 +17,7 @@ const Home = () => {
         
     }, [])
 
+
     return ( 
         <>
         <HomeStyled>
@@ -27,13 +28,13 @@ const Home = () => {
                     {
                     !loading && gradients.length !== 0 ? gradients.map((gradient) => {
                         return  <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
-                            <Card color={gradient.colors} name={gradient.name} />
+                        <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                         </Link>
                 }) : 
                 <div className="loader"> 
                     <TailSpin width="90" color="blue" />
                 </div>
-                    }
+                }
 
                 </section>
             </div>

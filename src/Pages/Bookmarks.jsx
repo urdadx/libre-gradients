@@ -37,7 +37,7 @@ const Bookmarks  = () => {
                     }
 
                     {
-                        !loading && gradients.length == 0 ? 
+                        !loading && gradients.length === 0 ? 
                         <div className="loader">
                             <h1 style={{color:"grey", fontSize:"27px"}}>Ooops.. You have no saved gradients 🤖</h1>
                         </div> : ""

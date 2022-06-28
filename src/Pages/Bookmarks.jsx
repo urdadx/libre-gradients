@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import { TailSpin } from "react-loader-spinner";
+import Meta from "../components/Meta";
 
 const Bookmarks  = () => {
 
@@ -20,6 +21,7 @@ const Bookmarks  = () => {
 
     return ( 
         <>
+        <Meta title=" Gradients Ninja | Bookmarks" />
             <HomeStyled>
             <Navbar />
             <div className="wrapper">

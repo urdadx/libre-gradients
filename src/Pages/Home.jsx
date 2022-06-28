@@ -5,6 +5,7 @@ import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
 
     return ( 
         <>
+        <Meta />
         <HomeStyled>
             <Navbar />
             <div className="wrapper">

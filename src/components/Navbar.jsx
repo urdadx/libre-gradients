@@ -10,6 +10,7 @@ import Modal from "react-modal"
 import { useState } from "react";
 import { SOCIAL_MEDIA_MODAL } from "../utils/index.utils";
 import AddColor from "../components/AddColor"
+import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
 
 const Navbar = () => {
 
@@ -26,7 +27,7 @@ const Navbar = () => {
         
     }
     
-      const closeModal = () => {
+    const closeModal = () => {
         setIsOpen(false);
         setIsAddModal(false)
     }
@@ -56,23 +57,25 @@ const Navbar = () => {
     return ( 
         <>
         <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={SOCIAL_MEDIA_MODAL}
-                contentLabel="Example Modal"
-                >
-                    {
-                        isAddModal ? <AddColor close={closeModal} /> : 
-                         <Generate close = {closeModal} />
-                    }
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={SOCIAL_MEDIA_MODAL}
+            contentLabel="Example Modal"
+            >
+            {
+                isAddModal ? <AddColor close={closeModal} /> : 
+                    <Generate close = {closeModal} />
+            }
         </Modal>
 
         <NavbarStyled>
             <nav className="navbar">   
                 <div className="header">
-                    <img alt="logo" src="https://img.icons8.com/ios-filled/50/7161e7/naruto.png"/>
+                    <img alt="logo" src={LOGO_URL} />
                     <h3 className="logo-name">
-                        <Link style={{textDecoration:"none",color:"#7161E7"}} to="/">Gradients Ninja</Link>
+                        <Link 
+                            style={{textDecoration:"none",color:"#7161E7"}}
+                            to="/">Gradients Ninja</Link>
                     </h3>
                 </div>
                 <div className="search-wrapper">
@@ -98,12 +101,14 @@ const Navbar = () => {
                 </div>
 
                 <div className="auth">
-                    <Button onClick={currentUser ? handleSignOut : handleGoogleLogin } color="#000" weight="300" background="#fff">
+                    <Button onClick={currentUser ? handleSignOut : handleGoogleLogin}
+                            color="#000" weight="300" background="#fff">
                         {
                             currentUser ? 
                             <img className="btn-img"  src={currentUser.photoURL} alt="" /> :
-                            <img className="btn-img" alt="" src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+                            <img className="btn-img" alt="" src={GOOGLE_LOGO}/>
                         }
+
                         <span>
                         {
                             currentUser ? "Logout" : "Sign In"
@@ -111,9 +116,9 @@ const Navbar = () => {
                         </span>
                     </Button>
 
-                    <Button color="#000" width="100px" weight="300" background="#fff">
+                    <Button onClick={handleGoogleLogin} color="#000" width="100px" weight="300" background="#fff">
                         
-                         <img className="btn-img" alt="" src="https://img.icons8.com/glyph-neue/64/000000/github.png"/>
+                         <img className="btn-img" alt="" src={GITHUB_LOGO}/>
                         <a rel="noreferrer" style={{textDecoration:"none"}}
                             href="https://github.com/WahabDev12" target="_blank" >Fork</a>
                     </Button>

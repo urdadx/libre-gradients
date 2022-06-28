@@ -22,6 +22,11 @@ export const Button = styled.button`
     gap:5px;
     align-items: center;
 
+    .btn-img{
+        width:20px;
+        height:20px;
+        border-radius: 100px;
+    }
     
 
 `

@@ -12,10 +12,10 @@ const App = () => {
       <Toaster position="bottom-center" reverseOrder={false} />
       <Router>
           <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/indie-color/:name" element={<ColorDetail />}  />
-              <Route path="/bookmarks" element={<Bookmarks  />} />
-              <Route path="*" element={<NotFound title="Page not Found" status="404" icon="🤖" />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/indie-color/:name" element={<ColorDetail />}  />
+            <Route path="/bookmarks" element={<Bookmarks  />} />
+            <Route path="*" element={<NotFound title="Page not Found" status="404" icon="🤖" />} />
           </Routes>
       </Router>
     </div>

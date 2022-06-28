@@ -65,7 +65,7 @@ const IndieColor = () => {
                                         }}
                                         width="50rem"
                                         height="180px"
-                                        value={`background: ${gradient.colors[0]}\nbackground: -webkit-linear-gradient(to left, ${gradient.colors[0]} ${gradient.colors[1]}  ${ gradient.colors[2] ? gradient.colors[2] : ""}) \nbackground: linear-gradient(to left, ${gradient.colors[0]} ${gradient.colors[1]} ${ gradient.colors[2] ? gradient.colors[2] : "" })`}
+                                        value={`background: ${gradient.colors[0]};\nbackground: -webkit-linear-gradient(to left, ${gradient.colors[0]} ${gradient.colors[1]}  ${ gradient.colors[2] ? gradient.colors[2] : ""}); \nbackground: linear-gradient(to left, ${gradient.colors[0]} ${gradient.colors[1]} ${ gradient.colors[2] ? gradient.colors[2] : "" });`}
                                         className="editor"
                                     />
                                     </div>

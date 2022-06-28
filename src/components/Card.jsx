@@ -25,7 +25,9 @@ const Card = ({ color , name, isSaved}) => {
                     <div className="colors">
                         {
                             color.map((color)=>{
-                                return <div style={{background:`${color}`}} className="indie-colors"></div>
+                                return <>
+                                    <div style={{background:`${color}`}} className="indie-colors"></div>
+                                </> 
                             })
                         }
             
@@ -37,7 +39,7 @@ const Card = ({ color , name, isSaved}) => {
                         </Link>
                         {
                             isSaved && 
-                        <Link  ink className="bk-parent" onClick={() => addBookmark(name, color)} to="#">
+                        <Link  className="bk-parent" onClick={() => addBookmark(name, color)} to="#">
                             <Icon icon="carbon:bookmark-add" inline={true} width="25" height="25" />
                             <Description message="Save" />
                         </Link>

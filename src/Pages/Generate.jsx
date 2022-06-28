@@ -5,8 +5,9 @@ import { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { Palette } from "color-thief-react";
 import { Icon } from "@iconify/react";
-import { copyCode, SAMPLE_IMG } from "../utils/index.utils";
+import { addBookmark, copyCode, randomNumbers } from "../utils/index.utils";
 import { sample } from "../utils/index.utils";
+import { SAMPLE_IMG } from "../assets/ImageLinks";
 import { Fade } from "react-reveal";
 
 const Generate = ({ close }) => {
@@ -38,7 +39,6 @@ const Generate = ({ close }) => {
     const imgSrc = image;
     
 
-
     return ( 
         <>
             <ModalStyled>
@@ -53,6 +53,7 @@ const Generate = ({ close }) => {
 
             <div className="image-upload">
                 <Fade left>
+
                 <div className="upload-field">
                     <p>Upload an image to generate color🔥 </p>
                     <div className="sample-image">
@@ -70,8 +71,11 @@ const Generate = ({ close }) => {
                     </div>
               
                 </div>
+
                 </Fade>
+
                 <Fade right>
+
                 <div className="result">
                     <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={4}>
                     {({ data, loading }) => {
@@ -84,9 +88,7 @@ const Generate = ({ close }) => {
                             {
                                 !loading  && data &&  data.map((color) => {
                                     return  <>
-                                    
                                     <div className="color" style={{background:`${color}`}}></div>
-                                    
                                     </>
                                 }) 
                             }
@@ -94,9 +96,7 @@ const Generate = ({ close }) => {
                             {
                                 !data && sample.map((color) => {
                                     return  <>
-                                    
                                     <div className="color" style={{background:`${color}`}}></div>
-                                    
                                     </>
                                 })
                             }
@@ -109,6 +109,7 @@ const Generate = ({ close }) => {
                                 Copy code <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
                             </Button>
                             <Button 
+                                onClick={() => addBookmark(randomNumbers, data)}
                                 width="140px" color="black" background="#DCDEE2">
                                 Bookmark <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
                             </Button>
@@ -119,7 +120,9 @@ const Generate = ({ close }) => {
                     }
                     }
                     </Palette>
+
                 </div>
+
                 </Fade>
             </div>
             </ModalStyled>

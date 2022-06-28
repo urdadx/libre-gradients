@@ -28,6 +28,8 @@ export const addBookmark = async (name, color ) => {
     
 }
 
+export const randomNumbers = Math.floor(Math.random() * 10000000000)
+
 export const SOCIAL_MEDIA_MODAL = {
     content: {
       top: '54%',
@@ -39,12 +41,11 @@ export const SOCIAL_MEDIA_MODAL = {
       borderRadius:'10px',
       fontFamily: 'Inter',
       width:"70%",
-      height:"75%",
+      height:"77%",
       padding:"5px",
-      overflow:"hidden"
+      overflow:"hidden",
     },
 }
 
 export const sample = ["#213a38" ,"#38a2ce","#d28b86" ]
 
-export const SAMPLE_IMG = "https://firebasestorage.googleapis.com/v0/b/user-uploads-v1.appspot.com/o/hype%2Fthemes%2Ft1.webp?alt=media&token=2b6c0dfd-d628-487e-9808-a4407a7d5dbb";

@@ -69,12 +69,6 @@ export const NavbarStyled = styled.section`
 
     }
 
-    .btn-img{
-        width:20px;
-        height:20px;
-        border-radius: 100px;
-    }
-
     ion-icon{
         font-size:30px;
         color:grey;

@@ -8,6 +8,7 @@ export const IndieStyled = styled.section`
     padding:20px;
     display: flex;
     justify-content: center;
+    
 
     .wrapper{
         width:100%;

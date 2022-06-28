@@ -23,7 +23,8 @@ const Bookmarks  = () => {
             <HomeStyled>
             <Navbar />
             <div className="wrapper">
-                <section className="main">
+            <h2 className="saved">Saved Gradients</h2>
+                <section style={{marginTop:"0.5rem"}} className="main">
                     {
                     !loading ? gradients.map((gradient) => {
                         return  <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>

@@ -19,6 +19,14 @@ export const HomeStyled = styled.div`
 
    }
 
+   .saved{
+     width:500px;
+     margin-top:7rem;
+     margin-left:auto;
+     font-size:34px;
+     color:#24306d;
+   }
+
    .sort{
          width:500px;
         margin: 7rem auto;

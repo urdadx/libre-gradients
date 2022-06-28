@@ -99,7 +99,7 @@ export const ModalStyled = styled.section`
         margin-top:1px;
     }
 
-    .form-container > input{
+     input{
         display: block;
         position: relative;
         border: 0px;
@@ -113,6 +113,7 @@ export const ModalStyled = styled.section`
     }
 
     .btn-div{
+        margin-top:1.5rem;
         display: flex;
         justify-content: center;
     }
@@ -145,6 +146,13 @@ export const ModalStyled = styled.section`
         border-radius: 1000px;
         cursor: pointer;
     }   
+
+    .pallette-div{
+        display: flex;
+        gap:30px;
+        margin-top:1rem;
+        
+    }
 
     .colors{
         display: flex;
@@ -188,6 +196,21 @@ export const ModalStyled = styled.section`
     .sample-image{
         border-radius: 8px;
         
+    }
+
+    .login-alert{
+        text-align: center;
+        font-size:27px;
+        font-family: "Inter",sans-serif;
+        margin:4rem auto;
+        color: #c84e89;
+        color: -webkit-linear-gradient(to left, #c84e89 #F15F79  ) ;
+        color: linear-gradient(to left, #c84e89 #F15F79 )
+    }
+
+    .modal-sign-in{
+        margin:3rem auto;
+        width:120px;
     }
 
 

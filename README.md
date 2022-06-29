@@ -70,11 +70,11 @@ View app on [localhost://3000](localhost://3000)
 
 ## Screenshots
 
-### Browse, Copy and Bookmark Gradeints
+### Browse, Copy and Bookmark Gradi nts
 ![Admin screen](/github/home.gif)
 
 ### Generate gradient from Image
-![Profile screen](/github/generategif)
+![Profile screen](/github/generate.gif)
 
 
 

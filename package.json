@@ -16,6 +16,8 @@
     "react-component-export-image": "^1.0.6",
     "react-dom": "^18.2.0",
     "react-ellipsis-text": "^1.2.1",
+    "react-favicon": "^1.0.1",
+    "react-filter-search": "^1.1.11",
     "react-google-login": "^5.2.2",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.2.0",

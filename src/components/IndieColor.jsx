@@ -43,7 +43,7 @@ const IndieColor = () => {
             <Navbar />
             <IndieStyled>
                 {
-                    !loading && gradients.length !== 0 ? gradients.map((gradient) => {
+                    !loading && gradients.length !== 0 ? gradients.map((gradient) =>  {
                         if(gradient.name === name){
                             return <div className="wrapper">  
                             <div 

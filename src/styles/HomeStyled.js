@@ -39,11 +39,11 @@ export const HomeStyled = styled.div`
 }
 
    .category{
-     width:340px;
+     width:360px;
      margin:6em auto;
      padding:20px;
      display: grid;
-     grid-template-rows: 1fr ;
+     grid-template-rows: 1fr;
      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
      gap:25px;
      margin-bottom: 0px;

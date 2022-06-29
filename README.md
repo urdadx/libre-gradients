@@ -30,12 +30,13 @@ Live Demo: https://gradients-ninja.vercel.app/
 - styles
 - assets
 - helpers
+- Contexts
 - backend (firebase utils)
 - utils
 
 #### Disclaimer: ENV variables
 
-- You also need to create a [Firebase](https://firebase.google.com)) account for your Firebase API keys for user authentication
+- You also need to create a [Firebase](https://firebase.google.com) account inorder to get the API KEYS for user authentication
 - Create a `.env` file in the root directory to store all your env secrets
 
 ### Installation
@@ -70,7 +71,7 @@ View app on [localhost://3000](localhost://3000)
 
 ## Screenshots
 
-### Browse, Copy and Bookmark Gradi nts
+### Browse, Copy and Bookmark Gradients
 ![Admin screen](/github/home.gif)
 
 ### Generate gradient from Image

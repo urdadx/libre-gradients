@@ -18,7 +18,6 @@ const Generate = ({ close }) => {
 
     const onLoad = (fileString) => {
         setImage(fileString);
-        setLoading(true)
     };
 
     useEffect(() => {
@@ -34,10 +33,12 @@ const Generate = ({ close }) => {
     };
 
     const onChange = (e) => {
+        setLoading(true)
         const files = e.target.files;
         const file = files[0];
         setFileName(files[0].name);
         getBase64(file);
+        setLoading(false)
     };
 
     const imgSrc = image;

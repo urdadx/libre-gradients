@@ -11,7 +11,7 @@ export const CardStyled = styled.div`
         box-shadow: 0 10px 40px -10px rgb(0 64 128 / 10%);
         cursor: pointer;
         margin-bottom:15px;
-       
+        
 
     }
 

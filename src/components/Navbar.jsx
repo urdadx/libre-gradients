@@ -13,6 +13,7 @@ import AddColor from "../components/AddColor"
 import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
 import { USER_PROFILE } from "../assets/ImageLinks";
 
+
 const Navbar = () => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -84,7 +85,7 @@ const Navbar = () => {
                         className="search-bar" />
                 </div>
                 <div className="actions">
-                    <Link className="bk-parent" to="/bookmarks">
+                    <Link  data-tip="hello world" className="bk-parent" to="/bookmarks">
                         <Icon icon="bi:bookmark-check" color="grey"
                                width="30" height="30" inline={true} />
                        <Description message="Bookmarks" />

@@ -26,7 +26,7 @@ const Card = ({ color , name, isSaved}) => {
                         {
                             color.map((color)=>{
                                 return <>
-                                    <div style={{background:`${color}`}} className="indie-colors"></div>
+                                    <div style={{background:`${color}`}} className="indie-colors bk-parent"></div>
                                 </> 
                             })
                         }

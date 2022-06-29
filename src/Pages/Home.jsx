@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import { HomeStyled } from "../styles/HomeStyled";
 import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
-import { TailSpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import { Button } from "../styles/ButtonStyled";
@@ -43,6 +42,7 @@ const Home = () => {
                     <Link className="sorted-link" to="/sorted/black">
                         <Button border="none" background="#161A1D">Black</Button>
                     </Link>
+                 
                 </div>
                 <section className="main">
                     {

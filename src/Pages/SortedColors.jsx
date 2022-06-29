@@ -6,15 +6,13 @@ import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import { Button } from "../styles/ButtonStyled";
 import { useParams } from "react-router-dom";
-import { greenGradients, redGradients, yellowGradients, blackGradients, blueGradients, whiteGradients } from "../utils/generateColors";
+import { greenGradients, redGradients, yellowGradients, blackGradients, blueGradients } from "../utils/generateColors";
 import Spinner from "../components/Spinner";
 
 const SortedColors = () => {
 
     const [loading, setIsLoading] = useState(false);
     const { sortedName } = useParams()
-
-    console.log(sortedName)
     
     useEffect(() => {
         setIsLoading(false)
@@ -68,12 +66,6 @@ const SortedColors = () => {
                                     ))
                                   : sortedName === "blue"
                                   ? blueGradients.map((gradient) => (
-                                    <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
-                                    <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
-                                    </Link>
-                                    ))
-                                  : sortedName === "white"
-                                  ? whiteGradients.map((gradient) => (
                                     <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                                     <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                                     </Link>

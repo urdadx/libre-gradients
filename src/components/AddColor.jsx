@@ -11,6 +11,7 @@ const AddColor = ({ close }) => {
 
     const { authWithGoogle } = useAuth();
 
+
     const handleGoogleLogin = async()=>{
         try{    
           await authWithGoogle();
@@ -20,6 +21,10 @@ const AddColor = ({ close }) => {
         catch(error){
           toast.error(error.message);
         }
+    }
+
+    const handleSubmitColor = () => {
+        toast.success("You gradient is waiting to be approved");
     }
 
     return ( 
@@ -53,7 +58,7 @@ const AddColor = ({ close }) => {
                         </div>
                
                     <div className="btn-div">
-                        <Button width="150px">
+                        <Button onClick={handleSubmitColor} width="150px">
                             Add Gradient
                         </Button>
                     </div>

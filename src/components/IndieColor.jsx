@@ -5,16 +5,17 @@ import AceEditor from "react-ace";
 import { Button } from "../styles/ButtonStyled";
 import { Icon } from '@iconify/react';
 import { useParams } from "react-router-dom";
+import { toast } from "react-hot-toast"
 
 import colorGradients from "../data/data.json";
 import { useState, useEffect } from "react";
-import { TailSpin } from "react-loader-spinner";
 import { copyCode } from "../utils/index.utils";
 import { addBookmark } from "../utils/index.utils";
 
 import "ace-builds/src-noconflict/mode-css";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/ext-language_tools";
+import Spinner from "./Spinner";
 
 const IndieColor = () => {
 
@@ -24,6 +25,11 @@ const IndieColor = () => {
 
     const scrollTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
     
+    const comingSoon = () => {
+        toast('Feature not available yet', {
+            icon: '⏳️',
+          });
+    }
     useEffect(() => {
         setGradients(colorGradients)
         setIsLoading(false)
@@ -78,9 +84,11 @@ const IndieColor = () => {
                                              width="170px"  color="black" background="#DCDEE2" >
                                             Bookmark <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
                                         </Button>
-                                        <Button width="170px"  color="black" background="#DCDEE2">
+                                        <Button width="170px" onClick={comingSoon}
+                                                color="black" background="#DCDEE2">
                                             Download <Icon icon="carbon:download" width="20" height="20" inline={true} />
                                         </Button>
+
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +96,7 @@ const IndieColor = () => {
                         </div>
                         }
                     }) : <div className="loader"> 
-                            <TailSpin width="90" color="blue" />
+                            <Spinner />
                         </div>
                 }
   

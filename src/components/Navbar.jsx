@@ -132,7 +132,7 @@ const Navbar = () => {
                         </span>
                     </Button>
 
-                    <Button onClick={handleGoogleLogin} 
+                    <Button 
                         color= "#000" weight="100" 
                         background= "#fff">
                         

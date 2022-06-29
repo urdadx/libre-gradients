@@ -8,6 +8,7 @@ export const copyCode = (color) => {
 
 } 
 
+
 export const addBookmark = async (name, color ) => {
 
     const colorInfo = {

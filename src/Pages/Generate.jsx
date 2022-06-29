@@ -1,7 +1,7 @@
 import { ModalStyled } from "../styles/ModalStyled";
 import { Link } from "react-router-dom";
 import { Button } from "../styles/ButtonStyled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { Palette } from "color-thief-react";
 import { Icon } from "@iconify/react";
@@ -14,12 +14,16 @@ const Generate = ({ close }) => {
 
     const [image, setImage] = useState(SAMPLE_IMG)
     const [filename, setFileName] = useState("")
-    const [isLoading, setLoading] = useState(false)
+    const [isLoading, setLoading] = useState(true)
 
     const onLoad = (fileString) => {
         setImage(fileString);
-        setLoading(false)
+        setLoading(true)
     };
+
+    useEffect(() => {
+        setLoading(false)
+    }, [])
     
     const getBase64 = (file) => {
         let reader = new FileReader();

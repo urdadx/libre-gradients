@@ -19,6 +19,7 @@ export const NavbarStyled = styled.section`
         width:100vw;
     }
 
+
     .navbar > div{
         width:100%;
     }
@@ -53,6 +54,8 @@ export const NavbarStyled = styled.section`
         font-family: "Raleway",sans-serif;
     }
 
+
+
     .search-bar:focus{
         border:2px solid rgb(124, 65, 255);
     }
@@ -65,8 +68,14 @@ export const NavbarStyled = styled.section`
     .actions{
         display: flex;
         padding:20px;
-        gap:35px;
+        gap:2.5em;
 
+    }
+
+    .user{
+        width:30px;
+        height: 30px;
+        border-radius: 1000px;
     }
 
     ion-icon{
@@ -85,6 +94,8 @@ export const NavbarStyled = styled.section`
         display: flex;
         gap:10px;
         padding:10px;
+        margin-right: 20px;
+        
     }
 
 
@@ -105,8 +116,14 @@ export const NavbarStyled = styled.section`
         font-size:14px;
         text-align: center;
         
-
     }
+
+    .fork{
+        text-decoration: none;
+        color:black
+    }
+
+
     .bk-parent:hover{
        .icon-alert{
             display: block;

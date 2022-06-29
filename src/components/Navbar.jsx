@@ -11,11 +11,12 @@ import { useState } from "react";
 import { SOCIAL_MEDIA_MODAL } from "../utils/index.utils";
 import AddColor from "../components/AddColor"
 import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
+import { USER_PROFILE } from "../assets/ImageLinks";
 
 const Navbar = () => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [isAddModal, setIsAddModal] = useState(false)
+    const [isAddModal, setIsAddModal] = useState(false);
 
     const openGenerate = () => {   
         setIsOpen(true);
@@ -69,7 +70,7 @@ const Navbar = () => {
         </Modal>
 
         <NavbarStyled>
-            <nav className="navbar">   
+            <nav className="navbar" >   
                 <div className="header">
                     <img alt="logo" src={LOGO_URL} />
                     <h3 className="logo-name">
@@ -79,36 +80,37 @@ const Navbar = () => {
                     </h3>
                 </div>
                 <div className="search-wrapper">
-                    <input type="search" placeholder="Search Gradients..." className="search-bar" />
+                    <input type="search" placeholder="Search Gradients..." 
+                        className="search-bar" />
                 </div>
                 <div className="actions">
                     <Link className="bk-parent" to="/bookmarks">
-                        <Icon icon="bi:bookmark-check" color="gray" width="30" height="30" inline={true} />
+                        <Icon icon="bi:bookmark-check" color="grey"
+                               width="30" height="30" inline={true} />
                        <Description message="Bookmarks" />
                     </Link>
-                    <Link to="#" className="bk-parent">
-                        <Icon icon="bi:moon" color="gray" width="30" height="30" inline={true} />
-                        <Description message="Dark mode" />
-                    </Link>
+                
                     <Link onClick={openGenerate} className="bk-parent" to="#">
-                        <Icon icon="akar-icons:cloud-upload" color="gray" width="30" height="30" inline={true} />
+                        <Icon icon="akar-icons:cloud-upload"  color= "grey"
+                               width="30" height="30" inline={true} />
                         <Description message="Generator" />
                     </Link>
                     <Link onClick={openAddModal} to="#" className="bk-parent">
-                        <Icon icon="carbon:add-alt" color="gray" width="30" height="30" inline={true} />
+                        <Icon icon="carbon:add-alt"  color="grey"
+                              width="30" height="30" inline={true} />
                         <Description message="Add colors" />
+                    </Link>
+                    <Link className="bk-parent" to="#">
+                        <img alt="" src={!currentUser ? USER_PROFILE : currentUser.photoURL} className="user"></img>
                     </Link>
                 </div>
 
                 <div className="auth">
                     <Button onClick={currentUser ? handleSignOut : handleGoogleLogin}
-                            color="#000" weight="300" background="#fff">
-                        {
-                            currentUser ? 
-                            <img className="btn-img"  src={currentUser.photoURL} alt="" /> :
+                            color= "#000"
+                            weight="300" background= "#fff">
+                        
                             <img className="btn-img" alt="" src={GOOGLE_LOGO}/>
-                        }
-
                         <span>
                         {
                             currentUser ? "Logout" : "Sign In"
@@ -116,11 +118,13 @@ const Navbar = () => {
                         </span>
                     </Button>
 
-                    <Button onClick={handleGoogleLogin} color="#000" width="100px" weight="300" background="#fff">
+                    <Button onClick={handleGoogleLogin} 
+                        color= "#000" weight="100" 
+                        background= "#fff">
                         
                          <img className="btn-img" alt="" src={GITHUB_LOGO}/>
-                        <a rel="noreferrer" style={{textDecoration:"none"}}
-                            href="https://github.com/WahabDev12" target="_blank" >Fork</a>
+                        <a rel="noreferrer" className="fork"
+                            href="https://github.com/WahabDev12" target="_blank" >Contribute</a>
                     </Button>
                 </div>
 

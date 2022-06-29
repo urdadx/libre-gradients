@@ -101,7 +101,8 @@ const Navbar = () => {
                         <Description message="Add colors" />
                     </Link>
                     <Link className="bk-parent" to="#">
-                        <img alt="" src={!currentUser ? USER_PROFILE : currentUser.photoURL} className="user"></img>
+                        <img alt="" src={!currentUser ? USER_PROFILE : currentUser.photoURL} 
+                             className="user"></img>
                     </Link>
                 </div>
 
@@ -124,7 +125,7 @@ const Navbar = () => {
                         
                          <img className="btn-img" alt="" src={GITHUB_LOGO}/>
                         <a rel="noreferrer" className="fork"
-                            href="https://github.com/WahabDev12" target="_blank" >Contribute</a>
+                            href="https://github.com/WahabDev12/gradients-ninja" target="_blank" >Contribute</a>
                     </Button>
                 </div>
 

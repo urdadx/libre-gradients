@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
+import { Button } from "../styles/ButtonStyled";
 
 const Home = () => {
 
@@ -25,7 +26,13 @@ const Home = () => {
         <HomeStyled>
             <Navbar />
             <div className="wrapper">
-        
+                <div className="category">
+                    <Button border="none" background="#FF025E">Red</Button>
+                    <Button border="none" background="#FFD000">Yellow</Button>
+                    <Button border="none" background="#64F38C">Blue</Button>
+                    <Button border="none" background="#019DF7">Green</Button>
+                    <Button border="none" background="#161A1D">Black</Button>
+                </div>
                 <section className="main">
                     {
                     !loading && gradients.length !== 0 ? gradients.map((gradient) => {

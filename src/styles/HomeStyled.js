@@ -10,7 +10,7 @@ export const HomeStyled = styled.div`
 
    .main{
         width:340px;
-        margin:8rem auto;
+        margin:0.5rem auto;
         padding:20px;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
@@ -20,21 +20,31 @@ export const HomeStyled = styled.div`
    }
 
    .saved{
-     width:500px;
-     margin-top:7rem;
-     margin-left:auto;
-     font-size:34px;
-     color:#24306d;
-   }
-
-   .sort{
-         width:500px;
-        margin: 7rem auto;
-        display: flex;
-        gap:20px;
     
+     color:#24306d;
+     width:340px;
+     margin:3em auto;
+     padding:20px;
+     display: grid;
+     grid-template-rows: 1fr ;
+     grid-template-columns: 1fr ;
+     gap:25px;
+     margin-bottom: 0px;
+     font-size: 30px;
+}
+
+   .category{
+     width:340px;
+     margin:6em auto;
+     padding:20px;
+     display: grid;
+     grid-template-rows: 1fr ;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     gap:25px;
+     margin-bottom: 0px;
    }
 
+ 
    .loader{
         display: flex;
         width:calc(100vw - 25vw);

@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import { TailSpin } from "react-loader-spinner";
 import Meta from "../components/Meta";
+import Spinner from "../components/Spinner";
 
 const Bookmarks  = () => {
 
@@ -33,9 +33,7 @@ const Bookmarks  = () => {
                             <Card color={gradient.colors} name={gradient.name} />
                         </Link>
                     }) : 
-                    <div className="loader">
-                        <TailSpin color="blue" />
-                    </div> 
+                    <Spinner />
 
                     }
 

@@ -19,6 +19,11 @@ export const HomeStyled = styled.div`
 
    }
 
+   .sorted-link{
+     text-decoration: none;
+     color:white;
+   }
+
    .saved{
     
      color:#24306d;

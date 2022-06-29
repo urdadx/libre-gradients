@@ -7,6 +7,7 @@ import { TailSpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import { Button } from "../styles/ButtonStyled";
+import Spinner from "../components/Spinner";
 
 const Home = () => {
 
@@ -27,11 +28,21 @@ const Home = () => {
             <Navbar />
             <div className="wrapper">
                 <div className="category">
-                    <Button border="none" background="#FF025E">Red</Button>
-                    <Button border="none" background="#FFD000">Yellow</Button>
-                    <Button border="none" background="#64F38C">Blue</Button>
-                    <Button border="none" background="#019DF7">Green</Button>
-                    <Button border="none" background="#161A1D">Black</Button>
+                    <Link className="sorted-link" to="/sorted/red">
+                        <Button border="none" background="#FF025E">Red</Button>
+                    </Link>
+                    <Link className="sorted-link" to="/sorted/yellow">
+                        <Button border="none" background="#FFD000">Yellow</Button>
+                    </Link>
+                    <Link className="sorted-link" to="/sorted/green">
+                        <Button border="none" background="#64F38C">Green</Button>
+                    </Link>
+                    <Link className="sorted-link" to="/sorted/blue">
+                        <Button border="none" background="#019DF7">Blue</Button>
+                    </Link>
+                    <Link className="sorted-link" to="/sorted/black">
+                        <Button border="none" background="#161A1D">Black</Button>
+                    </Link>
                 </div>
                 <section className="main">
                     {
@@ -40,9 +51,7 @@ const Home = () => {
                         <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                         </Link>
                 }) : 
-                <div className="loader"> 
-                    <TailSpin width="90" color="blue" />
-                </div>
+                    <Spinner />
                 }
 
                 </section>

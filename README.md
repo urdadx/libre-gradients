@@ -77,6 +77,7 @@ View app on [localhost://3000](localhost://3000)
 ![Profile screen](/github/generategif)
 
 
+
 ## &copy; Copyright
 
 Made with ❤️ by &copy; Abdul-Wahab 

@@ -19,6 +19,10 @@ export const HomeStyled = styled.div`
 
    }
 
+   .wrapper{
+     width:100%;
+   }
+
    .sorted-link{
      text-decoration: none;
      color:white;
@@ -39,12 +43,12 @@ export const HomeStyled = styled.div`
 }
 
    .category{
-     width:360px;
+     width:340px;
      margin:6em auto;
      padding:20px;
      display: grid;
      grid-template-rows: 1fr;
-     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
      gap:25px;
      margin-bottom: 0px;
    }

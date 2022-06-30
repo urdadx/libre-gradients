@@ -42,6 +42,9 @@ const Home = () => {
                     <Link className="sorted-link" to="/sorted/black">
                         <Button border="none" background="#161A1D">Black</Button>
                     </Link>
+                    <Link className="sorted-link" to="/sorted/white">
+                        <Button color="black" border="none" background="#e0dddd">White</Button>
+                    </Link>
                  
                 </div>
                 <section className="main">

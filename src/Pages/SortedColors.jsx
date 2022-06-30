@@ -8,6 +8,7 @@ import { Button } from "../styles/ButtonStyled";
 import { useParams } from "react-router-dom";
 import { greenGradients, redGradients, yellowGradients, blackGradients, blueGradients, whiteGradients } from "../utils/generateColors";
 import Spinner from "../components/Spinner";
+import { categories } from "../utils/categories";
 
 const SortedColors = () => {
 
@@ -18,8 +19,6 @@ const SortedColors = () => {
         setIsLoading(false)
     }, [])
 
-
-
     return ( 
         <>
         <Meta />
@@ -27,24 +26,20 @@ const SortedColors = () => {
             <Navbar />
             <div className="wrapper">
                 <div className="category">
-                     <Link className="sorted-link" to="/sorted/red">
-                        <Button border="none" background="#FF025E">Red</Button>
+                    {
+                      categories.map((category) => {
+                        return <>
+                        <Link className="sorted-link" to={`/sorted/${category.name}`}>
+                            <Button color="white" border="none" background={`${category.color}`}>{category.name}</Button>
+                        </Link>
+                        </>
+                      })
+        
+                    }
+                    <Link className="sorted-link" to="/sorted/White">
+                          <Button color="black" border="none" background="#e0dddd">White</Button>
                     </Link>
-                    <Link className="sorted-link" to="/sorted/yellow">
-                        <Button border="none" background="#FFD000">Yellow</Button>
-                    </Link>
-                    <Link className="sorted-link" to="/sorted/green">
-                        <Button border="none" background="#64F38C">Green</Button>
-                    </Link>
-                    <Link className="sorted-link" to="/sorted/blue">
-                        <Button border="none" background="#019DF7">Blue</Button>
-                    </Link>
-                    <Link className="sorted-link" to="/sorted/black">
-                        <Button border="none" background="#161A1D">Black</Button>
-                    </Link>
-                    <Link className="sorted-link" to="/sorted/white">
-                        <Button color="black" border="none" background="#e0dddd">White</Button>
-                    </Link>
+                
                 </div>
                 <section className="main">
                     {
@@ -54,31 +49,32 @@ const SortedColors = () => {
                         ) :
                         (
                       <>
-           {sortedName === "red"
+           {
+              sortedName === "Red"
                 ? redGradients.map((gradient) => (
                   <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                     <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                   </Link>
                   ))
-                : sortedName === "green"
+                : sortedName === "Green"
                 ? greenGradients.map((gradient) => (
                   <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                     <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                   </Link>
                   ))
-                : sortedName === "blue"
+                : sortedName === "Blue"
                 ? blueGradients.map((gradient) => (
                   <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                      <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                   </Link>
                   ))
-                : sortedName === "white"
+                : sortedName === "White"
                 ? whiteGradients.map((gradient) => (
                   <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                      <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                   </Link>
                   ))
-                : sortedName === "yellow"
+                : sortedName === "Yellow"
                 ? yellowGradients.map((gradient) => (
                   <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                      <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
@@ -91,8 +87,8 @@ const SortedColors = () => {
                   ))}
                   </>
               )}
-                          </>
-                    }
+                  </>
+          }
                   
 
                 </section>

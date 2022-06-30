@@ -12,25 +12,12 @@ import { SOCIAL_MEDIA_MODAL } from "../utils/index.utils";
 import AddColor from "../components/AddColor"
 import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
 import { USER_PROFILE } from "../assets/ImageLinks";
-import FilterResults from 'react-filter-search';
 import gradients from "../data/data.json"
 
 const Navbar = () => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [isAddModal, setIsAddModal] = useState(false);
-
-    const [data, setData] = useState([]);
-    const [value, setValue] = useState("")
-
-    useEffect(() => {
-        setData(gradients)
-    }, [])
-
-    const handleChange = (e) => {
-        const {value}  = e.target;
-        setValue(value)
-    }
 
     const openGenerate = () => {   
         setIsOpen(true);
@@ -93,7 +80,7 @@ const Navbar = () => {
                     </h3>
                 </div>
                 <div className="search-wrapper">
-                    <input onChange={handleChange} type="search" placeholder="Search Gradients..." 
+                    <input type="search" placeholder="Search Gradients..." 
                         className="search-bar" />
                 </div>
                 <div className="actions">
@@ -143,22 +130,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </NavbarStyled>
-        {
-        // <FilterResults value={value} data={data}
-        //      renderResults={results => (
-        //         <div>
-        //           {results.map(el => (
-        //             <>
-                   
-        //             <div>
-        //               <span>{el.name}</span>
-        //             </div>
-        //             </>
-        //           ))}
-        //         </div>
-        // )}
-        // /> 
-        }
+       
         </>
      );
 }

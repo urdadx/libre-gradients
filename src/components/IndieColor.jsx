@@ -1,6 +1,5 @@
 import { HomeStyled } from "../styles/HomeStyled";
 import { IndieStyled } from "../styles/IndieStyled";
-import Navbar from "./Navbar";
 import AceEditor from "react-ace";
 import { Button } from "../styles/ButtonStyled";
 import { Icon } from '@iconify/react';
@@ -42,7 +41,9 @@ const IndieColor = () => {
         <HomeStyled>
             <IndieStyled>
                 {
-                    !loading && gradients.length !== 0 ? gradients.map((gradient) =>  {
+                    !loading && gradients.length !== 0 ?
+                    // eslint-disable-next-line
+                    gradients.map((gradient) =>  { 
                         if(gradient.name === name){
                             return <div className="wrapper">  
                             <div 

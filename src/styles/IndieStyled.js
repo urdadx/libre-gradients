@@ -20,13 +20,13 @@ export const IndieStyled = styled.section`
         width: calc(100vw - 70%);
         margin:auto;
         display: block;
-        z-index: 999;
         border-radius: 8px;
 
     }
 
     .editor{
         border-radius: 5px;
+        z-index: 0;
     }
 
     .actions{

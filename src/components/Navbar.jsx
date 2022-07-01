@@ -13,7 +13,7 @@ import AddColor from "./AddColor"
 import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
 import { USER_PROFILE } from "../assets/ImageLinks";
 
-const Navbar = () => {
+const Navbar = ({ searchText, setSearchText }) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [isAddModal, setIsAddModal] = useState(false);
@@ -79,7 +79,7 @@ const Navbar = () => {
                     </h3>
                 </div>
                 <div className="search-wrapper">
-                    <input type="search" placeholder="Search Gradients..." 
+                    <input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="search" placeholder="Search Gradients..." 
                         className="search-bar" />
                 </div>
                 <div className="actions">

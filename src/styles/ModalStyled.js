@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const ModalStyled = styled.section`
 
+
+
  .header{
         display: flex;
         justify-content: space-between;

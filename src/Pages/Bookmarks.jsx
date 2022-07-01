@@ -1,5 +1,4 @@
 import { HomeStyled } from "../styles/HomeStyled";
-import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
@@ -23,7 +22,6 @@ const Bookmarks  = () => {
         <>
         <Meta title=" Gradients Ninja | Bookmarks" />
             <HomeStyled>
-            <Navbar />
             <div className="wrapper">
             <h2 className="saved">Saved Gradients</h2>
                 <section style={{marginTop:"0.5rem"}} className="main">

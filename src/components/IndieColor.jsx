@@ -38,9 +38,8 @@ const IndieColor = () => {
 
     return ( 
         <>
-        <HomeStyled>
 
-            <Navbar />
+        <HomeStyled>
             <IndieStyled>
                 {
                     !loading && gradients.length !== 0 ? gradients.map((gradient) =>  {

@@ -4,15 +4,13 @@ import Meta from "../components/Meta";
 import { Button } from "../styles/ButtonStyled";
 import { categories } from "../utils/categories";
 import GradientsList from "../components/GradientsList";
-import Navbar from "../components/Navbar";
 
-const Home = () => {
+const Home = ({ searchText, setSearchText }) => {
   
     return ( 
         <>
         <Meta />
         <HomeStyled>
-            <Navbar />
             <div className="wrapper">
                 <div className="category">
                 {
@@ -31,7 +29,7 @@ const Home = () => {
                  
                 </div>
                 <section className="main">
-                  <GradientsList />
+                  <GradientsList searchText={searchText} />
 
                 </section>
             </div>

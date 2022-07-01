@@ -8,7 +8,6 @@ export const copyCode = (color) => {
 
 } 
 
-
 export const addBookmark = async (name, color ) => {
 
     const colorInfo = {
@@ -16,17 +15,19 @@ export const addBookmark = async (name, color ) => {
         colors: color
     }
 
-    try{
-        const saved = JSON.parse(localStorage.getItem("saved-gradients") || "[]")
+    const saved = JSON.parse(localStorage.getItem("saved-gradients") || "[]")
+    const uniqueValues = new Set(saved.map(gradient => gradient.name));
+    console.log(uniqueValues.size , saved.length)
+    if (uniqueValues.size < saved.length) {
+        toast.error("Already Bookmarked")
+    }
+
+    else{
         saved.push(colorInfo)
         localStorage.setItem("saved-gradients", JSON.stringify(saved))
         toast.success("Saved to bookmarks")
-            
     }
-    catch(error){
-        toast.error(error.message)
-    }
-    
+
 }
 
 export const randomNumbers = Math.floor(Math.random() * 10000000000)

@@ -16,12 +16,14 @@ const GradientsList = ({ searchText }) => {
     }, [])
 
     return ( 
-        <>
+
+    <>
         <HomeStyled>
         <section className="main">  
-        {loading ? (
-        <Spinner />
-      ) : (
+        {
+            loading ? (
+              <Spinner />
+       ) : (
         gradients // eslint-disable-next-line
           .filter((gradient) => {
             if (searchText === "") {
@@ -51,7 +53,7 @@ const GradientsList = ({ searchText }) => {
           })
           .map((gradient, key) => {
             return (
-                <Link style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
+                <Link key={key} style={{textDecoration:"none"}} to={`/indie-color/${gradient.name}`}>
                     <Card color={gradient.colors} name={gradient.name} isSaved = {true}   />
                 </Link>
             );

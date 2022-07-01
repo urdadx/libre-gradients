@@ -7,12 +7,11 @@ import { Icon } from '@iconify/react';
 import Description from "./Description";
 import Generate from "../Pages/Generate";
 import Modal from "react-modal"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { SOCIAL_MEDIA_MODAL } from "../utils/index.utils";
-import AddColor from "../components/AddColor"
+import AddColor from "./AddColor"
 import { GITHUB_LOGO, GOOGLE_LOGO, LOGO_URL } from "../assets/ImageLinks";
 import { USER_PROFILE } from "../assets/ImageLinks";
-import gradients from "../data/data.json"
 
 const Navbar = () => {
 
@@ -130,7 +129,6 @@ const Navbar = () => {
                 </div>
             </nav>
         </NavbarStyled>
-       
         </>
      );
 }

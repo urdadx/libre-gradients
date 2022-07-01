@@ -30,7 +30,8 @@ const SortedColors = () => {
                       categories.map((category) => {
                         return <>
                         <Link className="sorted-link" to={`/sorted/${category.name}`}>
-                            <Button color="white" border="none" background={`${category.color}`}>{category.name}</Button>
+                            <Button color="white" border="none"
+                                background={`${category.color}`}>{category.name}</Button>
                         </Link>
                         </>
                       })

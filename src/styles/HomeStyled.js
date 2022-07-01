@@ -10,8 +10,8 @@ export const HomeStyled = styled.div`
 
    .main{
         width:340px;
-        margin:0.5rem auto;
-        padding:20px;
+        margin:0.25rem auto;
+        padding:10px;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr ;

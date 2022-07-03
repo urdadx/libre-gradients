@@ -71,12 +71,12 @@ const Navbar = ({ searchText, setSearchText }) => {
         <NavbarStyled>
             <nav className="navbar" >   
                 <div className="header">
-                    <img alt="logo" src={LOGO_URL} />
-                    <h3 className="logo-name">
-                        <Link 
-                            style={{textDecoration:"none",color:"#7161E7"}}
-                            to="/">Gradients Ninja</Link>
-                    </h3>
+                    <img alt="logo" className="logo" src={LOGO_URL} />
+                    <Link  style={{textDecoration:"none",color:"#7161E7"}} to="/">
+                        <h3 className="logo-name">
+                            Gradients Ninja
+                        </h3>
+                    </Link>
                 </div>
                 <div className="search-wrapper">
                     <input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="search" placeholder="Search Gradients..." 

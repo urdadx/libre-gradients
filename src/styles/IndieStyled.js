@@ -49,6 +49,39 @@ export const IndieStyled = styled.section`
         font-size:2.5rem;
     }
 
+    .after{
+        display: none;
+    }
+
+
+    @media only screen and (max-width:768px){
+        .wrapper{
+            display: none;
+
+        }
+
+        .hidden{
+            width: 100%;
+            display: block;
+        }
+
+        .after{
+            display: flex;
+            flex-direction: column;
+            width:700px;
+            margin:1rem auto;
+            gap:20px;
+        }
+
+        h3{
+            
+            text-align: inherit;
+        }
+
+    }
+
+
+
 
 
 

@@ -132,20 +132,38 @@ export const NavbarStyled = styled.section`
 
     @media  only screen and (max-width:768px){
         .navbar{
-        
+            margin: 0px;
+            padding:0;
+            width: 100vw;
         }
 
         .actions{
             gap:30px;
+            display: none;
         }
 
-        .search-wrapper{
-            display: none;
+        .search-bar{
+            width:160px;
+            font-size: 15px;
+            padding:5px;
         }
 
         .auth{
             display: none;
         }
+
+        h3{
+          font-size: 16px;
+        }
+
+        .logo{
+            width:20px;
+            height:20px;
+        }
+
+    
+
+        
 
     }
 `

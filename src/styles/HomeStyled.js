@@ -9,13 +9,13 @@ export const HomeStyled = styled.div`
    grid-template-columns: 1fr 1fr ;     
 
    .main{
-        width:340px;
-        margin:0.25rem auto;
-        padding:10px;
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr ;
-        gap:25px;
+      width:340px;
+      margin:0.25rem auto;
+      padding:10px;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr ;
+      gap:25px;
 
    }
 
@@ -66,8 +66,25 @@ export const HomeStyled = styled.div`
             display: flex;
             justify-content: center;
             flex-direction: column;
-            
         }   
+
+        .category{
+          display: none;
+        }
+
+        .wrapper{
+          width:150px;
+          margin: 5rem auto;
+        }
+    
+        .category{
+          margin: auto;
+        }
+
+        .saved{
+          margin-top:0.5em;
+        }
+          overflow-x: hidden;
     }
 
 

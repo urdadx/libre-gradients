@@ -45,7 +45,9 @@ const IndieColor = () => {
                     // eslint-disable-next-line
                     gradients.map((gradient) =>  { 
                         if(gradient.name === name){
-                            return <div className="wrapper">  
+
+                            return <>
+                             <div className="wrapper res">  
                             <div 
                             style={{
                                 background: `linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]})`,
@@ -94,11 +96,28 @@ const IndieColor = () => {
                             </div>
             
                         </div>
+                   
+                              
+                                </>
                         }
                     }) : <div className="loader"> 
                             <Spinner />
                         </div>
                 }
+
+                <section className="hidden">
+                    <div className="after">
+                        <Button color="black" background="#DCDEE2" >
+                            <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
+                            Copy Color</Button>
+                        <Button color="black" background="#DCDEE2">
+                            <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
+                            Bookmark</Button>
+                    </div>
+                </section>
+
+        
+             
   
             </IndieStyled>
 

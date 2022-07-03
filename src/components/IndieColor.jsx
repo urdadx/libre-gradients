@@ -103,7 +103,7 @@ const IndieColor = () => {
                                 <Button 
                                     onClick={() => copyCode(gradient.colors)} color="black" background="#DCDEE2" >
                                     <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
-                                    Copy Color</Button>
+                                    Copy Code</Button>
                                 <Button
                                  onClick={() => addBookmark(name, gradient.colors)}
                                  color="black" background="#DCDEE2">

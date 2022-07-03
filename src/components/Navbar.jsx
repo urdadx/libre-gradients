@@ -84,7 +84,7 @@ const Navbar = ({ searchText, setSearchText }) => {
                    
                 </div>
                 <Link  className="hidden-bookmark" to="/bookmarks">
-                        <Icon icon="bi:bookmark-check" color="grey"
+                        <Icon icon="bi:bookmark-check" color="#7161E7"
                                width="30" height="30" inline={true} />
                        <Description message="Bookmarks" />
                 </Link>

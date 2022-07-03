@@ -130,11 +130,24 @@ export const NavbarStyled = styled.section`
        }
     }
 
+    .hidden-bookmark{
+        display: none;
+    }
+
+    .hidden-logo-name{
+        display: none;
+    }
+
     @media  only screen and (max-width:768px){
         .navbar{
             margin: 0px;
             padding:0;
             width: 100vw;
+        }
+
+        .hidden-bookmark{
+            display: flex;
+            padding:20px;
         }
 
         .actions{
@@ -152,8 +165,14 @@ export const NavbarStyled = styled.section`
             display: none;
         }
 
-        h3{
-          font-size: 16px;
+        .logo-name{
+            display: none;
+        }
+
+        .hidden-logo-name{
+          font-size: 27px;
+          display: block;
+          letter-spacing: 1px;
         }
 
         .logo{

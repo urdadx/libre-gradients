@@ -96,25 +96,30 @@ const IndieColor = () => {
                             </div>
             
                         </div>
-                   
+                        
+
+                        <section className="hidden">
+                            <div className="after">
+                                <Button 
+                                    onClick={() => copyCode(gradient.colors)} color="black" background="#DCDEE2" >
+                                    <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
+                                    Copy Color</Button>
+                                <Button
+                                 onClick={() => addBookmark(name, gradient.colors)}
+                                 color="black" background="#DCDEE2">
+                                    <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
+                                    Bookmark</Button>
+                            </div>
+                        </section>
                               
                                 </>
+
                         }
                     }) : <div className="loader"> 
                             <Spinner />
                         </div>
                 }
 
-                <section className="hidden">
-                    <div className="after">
-                        <Button color="black" background="#DCDEE2" >
-                            <Icon icon="bi:code-slash" inline={true} width="20" height="20" />
-                            Copy Color</Button>
-                        <Button color="black" background="#DCDEE2">
-                            <Icon icon="carbon:bookmark-add" inline={true} width="20" height="20" />
-                            Bookmark</Button>
-                    </div>
-                </section>
 
         
              

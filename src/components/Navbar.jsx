@@ -76,14 +76,24 @@ const Navbar = ({ searchText, setSearchText }) => {
                         <h3 className="logo-name">
                             Gradients Ninja
                         </h3>
+                        <h3 className="hidden-logo-name">
+                                GNJ
+                        </h3>
                     </Link>
+
+                   
                 </div>
+                <Link  className="hidden-bookmark" to="/bookmarks">
+                        <Icon icon="bi:bookmark-check" color="grey"
+                               width="30" height="30" inline={true} />
+                       <Description message="Bookmarks" />
+                </Link>
                 <div className="search-wrapper">
                     <input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="search" placeholder="Search Gradients..." 
                         className="search-bar" />
                 </div>
                 <div className="actions">
-                    <Link  data-tip="hello world" className="bk-parent" to="/bookmarks">
+                    <Link  className="bk-parent" to="/bookmarks">
                         <Icon icon="bi:bookmark-check" color="grey"
                                width="30" height="30" inline={true} />
                        <Description message="Bookmarks" />

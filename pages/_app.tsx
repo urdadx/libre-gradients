@@ -1,35 +1,34 @@
-import { useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
-
+import { useMediaQuery } from "react-responsive";
+import MobileAlert from "@/components/mobile-alert";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 function useMobileDetection() {
-  const { setTheme } = useTheme();
+  const [shouldRenderMobileAlert, setShouldRenderMobileAlert] = useState(false);
+
+  const isMobileOrTablet = useMediaQuery({ maxWidth: 767 });
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 500) {
-        alert("Mobile device detected");
-      }
-    };
+    if (isMobileOrTablet) {
+      setShouldRenderMobileAlert(true);
+    } else {
+      console.log("Desktop screen detected");
+    }
+  }, [isMobileOrTablet]);
 
-    handleResize(); // Initial check on component mount
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [setTheme]);
+  return shouldRenderMobileAlert;
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  useMobileDetection();
+  const shouldRenderMobileAlert = useMobileDetection();
+
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
-      <Component {...pageProps} />
+      {shouldRenderMobileAlert ? <MobileAlert /> : <Component {...pageProps} />}
+
     </>
   );
 }

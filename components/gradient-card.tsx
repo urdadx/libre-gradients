@@ -37,29 +37,29 @@ export const GradientCard: React.FC<GradientCardProps> = ({ gradient }) => {
 
 			await toast.promise(
 				html2canvas(downloadRef.current, { scale }).then((canvas) => {
-				const scaledCanvas = document.createElement("canvas");
-				scaledCanvas.width = width;
-				scaledCanvas.height = height;
+					const scaledCanvas = document.createElement("canvas");
+					scaledCanvas.width = width;
+					scaledCanvas.height = height;
 
-				const scaledContext = scaledCanvas.getContext("2d");
-				if (scaledContext) {
-					scaledContext.drawImage(canvas, 0, 0, width, height);
-					const url = scaledCanvas.toDataURL("image/png");
-					const a = document.createElement("a");
-					a.href = url;
-					a.download = `${name}.png`;
-					a.click();
-				}
-				}), 
+					const scaledContext = scaledCanvas.getContext("2d");
+					if (scaledContext) {
+						scaledContext.drawImage(canvas, 0, 0, width, height);
+						const url = scaledCanvas.toDataURL("image/png");
+						const a = document.createElement("a");
+						a.href = url;
+						a.download = `${name}.png`;
+						a.click();
+					}
+				}),
 				{
 					loading: "Downloading",
 					error: "An error occured",
 					success: `Saved ${name}.png`
 				}
 			)
-			
+
 		}
-		
+
 	};
 
 
@@ -102,16 +102,16 @@ export const GradientCard: React.FC<GradientCardProps> = ({ gradient }) => {
 									<Link
 										href={`/customize/${name}`}
 										className="py-2 flex gap-2 items-center text-gray-700 hover:text-blue-500">
-										<Paintbrush size={17} /> Customize
+										<Paintbrush size={17} /> Open in editor
 									</Link>
-									<li  onClick={handleCopyCode} className="py-2 flex gap-2 items-center text-gray-700 hover:text-blue-500">
+									<li onClick={handleCopyCode} className="py-2 flex gap-2 items-center text-gray-700 hover:text-blue-500">
 										<Clipboard size={15} />
-										Copy CSS
+										Copy CSS code
 									</li>
-									<li onClick={handleDownloadPNG}
-										 className="py-2 flex gap-2 items-center text-gray-700 hover:text-blue-500">
+									{/* <li onClick={handleDownloadPNG}
+										className="py-2 flex gap-2 items-center text-gray-700 hover:text-blue-500">
 										<Download size={17} /> Download
-									</li>
+									</li> */}
 								</ul>
 							</PopoverContent>
 						</PopoverTrigger>

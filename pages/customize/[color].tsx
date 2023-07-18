@@ -42,31 +42,29 @@ const Color = () => {
 			const width = downloadRef.current.offsetWidth * scale;
 			const height = downloadRef.current.offsetHeight * scale;
 
-			await toast.promise(	
+			try {
+				toast.success(`${color}.png`)
 				html2canvas(downloadRef.current, { scale }).then((canvas) => {
-				const scaledCanvas = document.createElement("canvas");
-				scaledCanvas.width = width;
-				scaledCanvas.height = height;
+					const scaledCanvas = document.createElement("canvas");
+					scaledCanvas.width = width;
+					scaledCanvas.height = height;
 
-				const scaledContext = scaledCanvas.getContext("2d");
-				if (scaledContext) {
-					scaledContext.drawImage(canvas, 0, 0, width, height);
-					const url = scaledCanvas.toDataURL("image/png");
-					const a = document.createElement("a");
-					a.href = url;
-					a.download = `${color}.png`;
-					a.click();
-				}
-				}), 
-				{
-					loading: "Downloading",
-					error: "An error occured",
-					success: `Saved ${color}.png`
-				}
-			)
-			
+					const scaledContext = scaledCanvas.getContext("2d");
+					if (scaledContext) {
+						scaledContext.drawImage(canvas, 0, 0, width, height);
+						const url = scaledCanvas.toDataURL("image/png");
+						const a = document.createElement("a");
+						a.href = url;
+						a.download = `${color}.png`;
+						a.click();
+					}
+				})
+			} catch (error) {
+				toast.error("An error occured")
+			}
+
 		}
-		
+
 	};
 
 
@@ -98,29 +96,29 @@ const Color = () => {
 										<div className="w-[420px]">
 											<div className="flex justify-center gap-6 my-4">
 												{gradient.colors?.map((color, index) => {
-														return (
-															<div key={index}
-																className="flex flex-col gap-2">
-																<p className="text-gray-600">
-																	Color {index + 1}
-																</p>
-																<div className="w-[205px] border rounded-md flex items-center justify-between h-[40px] p-2">
-																	<small className="px-2 text-sm font-medium">
-																		{color}
-																	</small>
-																	<div style={{
-																			background: `${color}`,
-																		}}
-																		className="w-[30px] h-[30px] rounded-lg">
-																		<input
-																			type="color"
-																			className="opacity-0 cursor-pointer"
-																		/>
-																	</div>
+													return (
+														<div key={index}
+															className="flex flex-col gap-2">
+															<p className="text-gray-600">
+																Color {index + 1}
+															</p>
+															<div className="w-[205px] border rounded-md flex items-center justify-between h-[40px] p-2">
+																<small className="px-2 text-sm font-medium">
+																	{color}
+																</small>
+																<div style={{
+																	background: `${color}`,
+																}}
+																	className="w-[30px] h-[30px] rounded-lg">
+																	<input
+																		type="color"
+																		className="opacity-0 cursor-pointer"
+																	/>
 																</div>
 															</div>
-														);
-													}
+														</div>
+													);
+												}
 												)}
 											</div>
 											<div className="flex flex-col my-6 gap-y-4">
@@ -157,7 +155,7 @@ const Color = () => {
 													</DialogTrigger>
 													<CodePreview rotation={rotation} colors={gradient.colors} />
 												</Dialog>
-											
+
 												<Button
 													onClick={handleDownloadPNG}
 													size="lg"
@@ -168,7 +166,7 @@ const Color = () => {
 													</p>
 													<Download size={20} />
 												</Button>
-												
+
 											</div>
 										</div>
 									</div>

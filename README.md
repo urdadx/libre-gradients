@@ -57,6 +57,6 @@ OpenResume is created with the NextJS web framework and follows its project stru
 5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see LibreGradients live
 
 ## Contributing 🤝
-Anyone is free to contribute to this project. Open an issue on bugs or features you'd like to see or send a pull request for review.
+Anyone is free to contribute to this project. Open an issue on bugs/features or send a pull request for review.
 
 ## Give this repo a star ⭐.

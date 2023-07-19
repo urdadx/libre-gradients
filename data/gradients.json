@@ -86,8 +86,8 @@
 		"colors": ["#BBD2C5", "#536976"]
 	},
 	{
-		"name": "Sky",
-		"colors": ["#076585", "#fff"]
+		"name": "Kye Meh",
+		"colors": ["#8360c3", "#2ebf91"]
 	},
 	{
 		"name": "Sel",
@@ -166,9 +166,9 @@
 		"colors": ["#3CA55C", "#B5AC49"]
 	},
 	{
-        "name": "Lemon Lime",
-        "colors":["#7ec6bc","#ebe717"]
-    },
+		"name": "Lemon Lime",
+		"colors": ["#7ec6bc", "#ebe717"]
+	},
 	{
 		"name": "Horizon",
 		"colors": ["#003973", "#E5E5BE"]
@@ -186,9 +186,9 @@
 		"colors": ["#F09819", "#EDDE5D"]
 	},
 	{
-        "name": "Mango Papaya",
-        "colors": ["#de8a41","#2ada53"]
-    },
+		"name": "Mango Papaya",
+		"colors": ["#de8a41", "#2ada53"]
+	},
 	{
 		"name": "Aubergine",
 		"colors": ["#AA076B", "#61045F"]

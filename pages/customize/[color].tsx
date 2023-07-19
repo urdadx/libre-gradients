@@ -14,11 +14,13 @@ import html2canvas from "html2canvas";
 
 
 const Color = () => {
+
 	const colorGradient: Gradient[] = data;
 
 	const [gradients, setGradients] = useState<Gradient[]>([]);
 	const [, setIsLoading] = useState(false);
 	const [rotation, setRotation] = useState(140);
+	const [colorOne, setColorOne] = useState("")
 
 	const router = useRouter();
 	const { color } = router.query;
@@ -42,27 +44,23 @@ const Color = () => {
 			const width = downloadRef.current.offsetWidth * scale;
 			const height = downloadRef.current.offsetHeight * scale;
 
-			try {
-				toast.success(`${color}.png`)
-				html2canvas(downloadRef.current, { scale }).then((canvas) => {
-					const scaledCanvas = document.createElement("canvas");
-					scaledCanvas.width = width;
-					scaledCanvas.height = height;
+			html2canvas(downloadRef.current, { scale }).then((canvas) => {
+				const scaledCanvas = document.createElement("canvas");
+				scaledCanvas.width = width;
+				scaledCanvas.height = height;
 
-					const scaledContext = scaledCanvas.getContext("2d");
-					if (scaledContext) {
-						scaledContext.drawImage(canvas, 0, 0, width, height);
-						const url = scaledCanvas.toDataURL("image/png");
-						const a = document.createElement("a");
-						a.href = url;
-						a.download = `${color}.png`;
-						a.click();
-					}
-				})
-			} catch (error) {
-				toast.error("An error occured")
-			}
+				const scaledContext = scaledCanvas.getContext("2d");
+				if (scaledContext) {
+					scaledContext.drawImage(canvas, 0, 0, width, height);
+					const url = scaledCanvas.toDataURL("image/png");
+					const a = document.createElement("a");
+					a.href = url;
+					a.download = `${color}.png`;
+					a.click();
+				}
+			})
 
+			toast.success(`${color}.png`)
 		}
 
 	};
@@ -106,13 +104,12 @@ const Color = () => {
 																<small className="px-2 text-sm font-medium">
 																	{color}
 																</small>
-																<div style={{
-																	background: `${color}`,
-																}}
+																<div style={{ background: `${color}` }}
 																	className="w-[30px] h-[30px] rounded-lg">
 																	<input
+																		value={color}
 																		type="color"
-																		className="opacity-0 cursor-pointer"
+																		className="opacity-0 pointer-events-none"
 																	/>
 																</div>
 															</div>

@@ -13,8 +13,9 @@ import Loader from "@/components/loader-spinner";
 import { samples } from "@/lib/helpers";
 
 const Generate = () => {
+
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [, setIsLoading] = useState(false);
   const [image, setImage] = useState<any>(testImage);
 
   const handleClick = () => {
@@ -99,19 +100,20 @@ const Generate = () => {
               <p className="text-xl text-gray-500 mb-2 mt-2 text-center">
                 Extracted colors ✨
               </p>
-              <div className="display-namew-full py-4 flex justify-center overflow-hidden cursor-pointer relative">
-                <div className="flex flex-row gap-x-6">
-                  <Palette
-                    src={imgSrc}
-                    crossOrigin="anonymous"
-                    format="hex"
-                    colorCount={4}
-                  >
-                    {({ loading, data }) => {
-                      if (loading) return <div className=""><Loader /></div>;
+              <Palette
+                src={imgSrc}
+                crossOrigin="anonymous"
+                format="hex"
+                colorCount={4}
+              >
+                {({ loading, data }) => {
+                  if (loading) return <div className=""><Loader /></div>;
+                  return (
+                    <>
 
-                      return (
-                        <>
+                      <div className="display-namew-full py-4 flex justify-center overflow-hidden cursor-pointer relative">
+                        <div className="flex flex-row gap-x-6">
+
                           {
                             !data && samples.map((color: string) => {
                               return (
@@ -146,37 +148,41 @@ const Generate = () => {
                               </span>
                             </div>
                           ))}
-                        </>
-                      );
-                    }}
-                  </Palette>
-                </div>
-              </div>
+                        </div>
+                      </div>
+                      <div className="w-[450px] h-auto translate-y-32 flex flex-col gap-[15px]">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button
+                              size="lg"
+                              className="w-full h-[50px] bg-background border border-[#7d75ee] flex gap-2 items-center text-[#7d75ee] hover:bg-gray-100"
+                              variant="default"
+                            >
+                              <p className="font-semibold text-md">Copy CSS code</p>
+                              <CopyIcon size={20} />
+                            </Button>
+                          </DialogTrigger>
+                          <CodePreview colors={data ?? samples} rotation={140} />
+                        </Dialog>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button
+                              size="lg"
+                              className="w-full h-[50px] bg-background border border-[#7d75ee] flex gap-2 items-center text-[#7d75ee] hover:bg-gray-100"
+                              variant="default"
+                            >
+                              <p className="font-semibold text-md">Download gradient</p>
+                              <Download size={20} />
+                            </Button>
+                          </DialogTrigger>
+                          <DownloadPreview colors={data ?? samples} rotation={140} />
+                        </Dialog>
+                      </div>
+                    </>
+                  );
+                }}
+              </Palette>
 
-              <div className="w-[450px] h-auto translate-y-32 flex flex-col gap-[15px]">
-                <Button
-                  size="lg"
-                  className="w-full h-[50px] bg-background border border-[#7d75ee] flex gap-2 items-center text-[#7d75ee] hover:bg-gray-100"
-                  variant="default"
-                  onClick={handleClick}
-                >
-                  <p className="font-semibold text-md">Copy CSS code</p>
-                  <CopyIcon size={20} />
-                </Button>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button
-                      size="lg"
-                      className="w-full h-[50px] bg-background border border-[#7d75ee] flex gap-2 items-center text-[#7d75ee] hover:bg-gray-100"
-                      variant="default"
-                    >
-                      <p className="font-semibold text-md">Download PNG</p>
-                      <Download size={20} />
-                    </Button>
-                    {/* <DownloadPreview /> */}
-                  </DialogTrigger>
-                </Dialog>
-              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 # LibreGradients
 
-LibreGradient is an open-source collections of beautiful gradients for your next project.
+LibreGradient is an open-source collections of beautiful gradients colors.
 
-The goal of LibreGradients is to provide everyone with free access to a collection of beautiful and modern gradients.
+The goal of LibreGradients is to provide everyone with free access to a collection of beautiful and modern gradients for their next project.
 
 Official site: [https://libre-gradients.vercel.app](https://libre-gradients.vercel.app)
 
@@ -20,8 +20,8 @@ It has 5 Core Features:
 | **1. Copy CSS Code** | You can easily copy the CSS code of any gradient you select |
 | **2.  In-built Editor** | Easily customize your gradients to fit your specific use-case.|
 | **3. Palette Extractor** | Upload any image of your choice and with our extractor, we can generate beautiful color palettes for you |
-| **4. Powerful search** | Download any gradient in PNG formats  locally to your computer  (more formats coming soon)|
-| **5. Easy Search** | Easily search gradients by name of hex code |
+| **4. Export as PNG** | Download any gradient in PNG formats  locally to your computer  (more formats coming soon)|
+| **5. Easy Search** | Easily search gradients by name or hex code |
 
 ## 📚 Tech Stack
 
@@ -50,7 +50,7 @@ OpenResume is created with the NextJS web framework and follows its project stru
 
 ## 💻 Local Development
 
-1. Download the repo `git clone hhttps://github.com/urdadx/Gradients-Ninja.git`
+1. Download the repo `git clone https://github.com/urdadx/Gradients-Ninja.git`
 2. Change the directory `cd Gradients-Ninja`
 3. Install the dependency `npm install`
 4. Start a development server `npm run dev`

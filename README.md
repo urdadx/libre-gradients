@@ -1,38 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LibreGradients
 
-## Getting Started
+LibreGradient is an open-source collections of beautiful gradients for your next project.
 
-First, run the development server:
+The goal of LibreGradients is to provide everyone with free access to a collection of beautiful and modern gradients.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Official site: [https://libre-gradients.vercel.app](https://libre-gradients.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚒️ Demo
+Browse through a list of over 284 beautiful and modern gradients.
+<div style="width: 600px;">
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![LibreGradients Demo](.github/browse.gif) 
+</div>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## ⭐ Features 
+It has 5 Core Features:
+| <div style="width:285px">**Feature**</div> | **Description** |
+|---|---|
+| **1. Copy CSS Code** | You can easily copy the CSS code of any gradient you select |
+| **2.  In-built Editor** | Easily customize your gradients to fit your specific use-case.|
+| **3. Palette Extractor** | Upload any image of your choice and with our extractor, we can generate beautiful color palettes for you |
+| **4. Powerful search** | Download any gradient in PNG formats  locally to your computer  (more formats coming soon)|
+| **5. Easy Search** | Easily search gradients by name of hex code |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📚 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| <div style="width:140px">**Category**</div> | <div style="width:100px">**Choice**</div> | **Descriptions** |
+|---|---|---|
+| **Language** | [TypeScript](https://github.com/microsoft/TypeScript) | TypeScript is JavaScript with static type checking and helps catch many silly bugs at code time. |
+| **UI Library** | [React](https://github.com/facebook/react) | React’s declarative syntax and component-based architecture make it simple to develop reactive reusable components. |
+| **State Management** | [Zustand](https://github.com/reduxjs/redux-toolkit) | Zustand is a small, fast and scalable bearbones state-management solution, it has a comfy api based on hooks. |
+| **CSS Framework** | [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) | Tailwind speeds up development by providing helpful css utilities and removing the need to context switch between tsx and css files. |
+| **Web Framework** | [NextJS 13](https://github.com/vercel/next.js) | Next.js supports static site generation and helps build efficient React webpages that support SEO. |
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+OpenResume is created with the NextJS web framework and follows its project structure. 
 
-## Deploy on Vercel
+| <div style="width:115px">**Page Route**</div> | **Code Path** | **Description** |
+|---|---|---|
+| / | /index.tsx | Home page that contains the list of all gradients |
+| /components | /components| Contains all the components used in the project |
+| /ui | /ui/| Contains radix and shadcn ui utility components |
+| /generate | /generate.tsx/| Contains logic for extracting colors from images |
+| /[color] | /[color].tsx/| Individual page for each gradient |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 💻 Local Development
+
+1. Download the repo `git clone hhttps://github.com/urdadx/Gradients-Ninja.git`
+2. Change the directory `cd Gradients-Ninja`
+3. Install the dependency `npm install`
+4. Start a development server `npm run dev`
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see LibreGradients live
+
+## Contributing 🤝
+Anyone is free to contribute to this project. Open an issue on bugs or features you'd like to see or send a pull request for review.
+
+## Give this repo a star ⭐.

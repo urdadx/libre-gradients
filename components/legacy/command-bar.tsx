@@ -1,10 +1,7 @@
-
-
-
-interface CommandBarProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface CommandBarProps extends React.HTMLAttributes<HTMLDivElement> { }
 import * as React from "react"
 
-export function CommandBar({ className, ...props }: CommandBarProps){ 
+export function CommandBar({ className, ...props }: CommandBarProps) {
 
     return (
         <>
@@ -13,9 +10,9 @@ export function CommandBar({ className, ...props }: CommandBarProps){
                     <div className="p-1 px-2 border-r border-gray-200">
                         {/* Items here */}
                     </div>
-                   
-                
-                   
+
+
+
                 </div>
             </div>
         </>

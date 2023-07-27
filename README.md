@@ -1,6 +1,6 @@
 # LibreGradients
 
-LibreGradient is an open-source collections of beautiful gradients colors.
+LibreGradient is an open-source collections of beautiful gradient colors.
 
 The goal of LibreGradients is to provide everyone with free access to a collection of beautiful and modern gradients for their next project.
 

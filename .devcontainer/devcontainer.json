@@ -10,7 +10,7 @@
   },
   "customizations": {
     "codespaces": {
-      "openFiles": ["src/App.tsx"]
+      "openFiles": ["pages/_app.tsx"]
     }
   },
   "portsAttributes": {

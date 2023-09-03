@@ -39,7 +39,7 @@ It has 5 Core Features:
 
 ## 📁 Project Structure
 
-OpenResume is created with the NextJS web framework and follows its project structure.
+LibreGradients is created with the NextJS web framework and follows its project structure.
 
 | <div style="width:115px">**Page Route**</div> | **Code Path**  | **Description**                                   |
 | --------------------------------------------- | -------------- | ------------------------------------------------- |
@@ -59,6 +59,17 @@ OpenResume is created with the NextJS web framework and follows its project stru
 
 ## Contributing 🤝
 
-Anyone is free to contribute to this project. Open an issue on bugs/features or send a pull request for review.
+We love our contributors! Here's how you can contribute:
+
+- [Open an issue](https://github.com/urdadx/libre-gradients/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/urdadx/libre-gradients/pull) to add new features/make quality-of-life improvements/fix bugs.
+
+<a href="https://github.com/urdadx/libre-gradients/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=urdadx/libre-gradients" />
+</a>
+
+## Repo Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/f6a19ab2fa71a6f5ee17b03ee637698e0b530a4c.svg 'Repobeats analytics image')
 
 ## Give this repo a star ⭐.
